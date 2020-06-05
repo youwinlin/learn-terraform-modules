@@ -29,8 +29,8 @@ module "ec2_instances" {
 
   ami                    = "ami-0f75c2980c6a5851d"
   instance_type          = "t2.micro"
-  #iam_instance_profile   = aws_iam_instance_profile.test_profile.name
-  iam_instance_profile   = "SSM"
+  iam_instance_profile   = aws_iam_instance_profile.test_profile.name
+  #iam_instance_profile   = "SSM"
   key_name               = "Vincent"
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
